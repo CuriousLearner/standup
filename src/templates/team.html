@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block teamlist %}
+  <li class="active"><a href="{% url 'teamlist' %}">Team</a></li>
+{% endblock %}
+
+{% block main %}
+  {% if teams %}
+  <h2>Here is a list of teams registered with Standup</h2>
+  <ul>
+    {% for team in teams %}
+      <li>
+        <a href="/team/{{ team.slug }}">{{ team.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <h2>Sorry, there are no teams available for Standup!</h2>
+  {% endif %}
+{% endblock %}

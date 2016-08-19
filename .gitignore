@@ -87,3 +87,12 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Virtual Environments
+venv
+
+# Database
+db.sqlite3
+
+# Migrations
+migrations/

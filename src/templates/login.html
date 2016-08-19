@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block navlogin %}
+  <li class="active"><a href="{% url 'login' %}">Login</a></li>
+{% endblock %}
+
+{% block main %}
+<h2>Login to Standup</h2>
+
+<form action="{% url 'login' %}" method="POST">
+  {% csrf_token %}
+  {% for field in form %}
+    <b>{{ field.label }}</b>:
+    {{ field }}<br>
+    {{ field.errors }}
+  {% endfor %}
+  <input type="submit" value="Submit" class="btn btn-success">
+</form>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block projectlist %}
+  <li class="active"><a href="{% url 'projectlist' %}">Projects</a></li>
+{% endblock %}
+
+{% block main %}
+  {% if projects %}
+    <h2>Here is a list of projects registered with Standup</h2>
+    <ul>
+      {% for project in projects %}
+        <li>
+          <a href="/project/{{ project.slug }}">{{ project.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <h2>Sorry, there are no projects available for Standup!</h2>
+  {% endif %}
+{% endblock %}

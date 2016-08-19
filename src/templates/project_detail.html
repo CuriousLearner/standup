@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <h2>{{ project.name }}</h2>
+  <a href="{{ project.repo_url }}">{{ project.repo_url }}</a><br>
+  <p>{{ project.description }}</p>
+
+  <a href="/project/{{ project.slug }}/posts">
+    <button type="button" class="btn btn-success" aria-label="Left Align">
+      View all updates belonging to {{ project.name }}
+    </button>
+  </a>
+{% endblock %}

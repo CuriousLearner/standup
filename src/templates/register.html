@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block navregister %}
+  <li class="active"><a href="{% url 'register' %}">Register</a></li>
+{% endblock %}
+
+{% block main %}
+<h2>Register to Standup</h2>
+
+<form action="{% url 'register' %}" method="POST">
+  {% csrf_token %}
+  {% for field in form %}
+    <b>{{ field.label }}</b>:
+    {{ field }}<br>
+    {{ field.errors }}<br>
+  {% endfor %}
+  <input type="submit" value="Submit" class="btn btn-success">
+</form>
+
+{% endblock %}

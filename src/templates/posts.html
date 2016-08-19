@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  {% if posts %}
+    {% for post in posts %}
+      Post: {{ post.content }}<br>
+      Posted on: {{ post.posted_on }}
+      Posted By: {{ post.posted_by }}<br>
+      <a href="/{{ post.posted_by.username }}/posts">@{{ post.posted_by.username }}</a><br>
+      {{ post.posted_by.profile_image_url }}
+      {% if post.hashtags.all %}
+        Hashtags:
+        {% for hashtag in post.hashtags.all %}
+          <a href="/hashtag/{{ hashtag.content }}/posts">#{{ hashtag.content }}</a>
+        {% endfor %}
+      {% endif %}<br>
+      <hr>
+    {% endfor %}
+  {% else %}
+    <h2>Sorry, there are no posts at the moment</h2>
+  {% endif %}
+{% endblock %}

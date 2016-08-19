@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <h2>{{ team.name }}</h2>
+  <p>{{ team.description }}</p>
+  {% if team.projects.all %}
+    <h3>Here are the projects handled by {{ team.name }} team</h3>
+    <ul>
+      {% for project in team.projects.all %}
+        <a href="/project/{{ project.slug }}">{{ project }}<br></a>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <a href="/team/{{ team.slug }}/posts">
+    <button type="button" class="btn btn-success" aria-label="Left Align">
+      View all updates belonging to {{ team.name }}
+    </button>
+  </a>
+{% endblock %}
