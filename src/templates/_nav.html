@@ -14,23 +14,26 @@
       {% block nav %}
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            {% block navregister %}
-              <li><a href="{% url 'register' %}">Register</a></li>
-            {% endblock%}
-            {% block navlogin %}
-              <li><a href="{% url 'login' %}">Login</a></li>
-            {% endblock %}
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            {% block teamlist %}
-              <li><a href="{% url 'teamlist' %}">Team</a></li>
-            {% endblock %}
-            {% block projectlist %}
-              <li><a href="{% url 'projectlist' %}">Projects</a></li>
-            {% endblock %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
-          </ul>
+          {% if not user.is_authenticated %}
+            <ul class="nav navbar-nav">
+                {% block navregister %}
+                  <li><a href="{% url 'register' %}">Register</a></li>
+                {% endblock%}
+                {% block navlogin %}
+                  <li><a href="{% url 'login' %}">Login</a></li>
+                {% endblock %}
+            </ul>
+          {% else %}
+            <ul class="nav navbar-nav navbar-right">
+              {% block teamlist %}
+                <li><a href="{% url 'teamlist' %}">Team</a></li>
+              {% endblock %}
+              {% block projectlist %}
+                <li><a href="{% url 'projectlist' %}">Projects</a></li>
+              {% endblock %}
+              <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          {% endif %}
         </div><!-- /.navbar-collapse -->
       {% endblock %}
     </div><!-- /.container-fluid -->
