@@ -18,12 +18,12 @@
           {% if not user.is_authenticated %}
             <ul class="nav navbar-nav navbar-right">
               {% block navregister %}
-                <li class="nav-bttn">
+                <li class="register nav-bttn">
                   <a href="{% url 'register' %}">Register</a>
                 </li>
                 {% endblock%}
                 {% block navlogin %}
-                  <li class="nav-bttn">
+                  <li class="login nav-bttn">
                     <a href="{% url 'login' %}">Login</a>
                   </li>
                 {% endblock %}
@@ -31,12 +31,12 @@
             {% else %}
               <ul class="nav navbar-nav navbar-right">
                 {% block teamlist %}
-                  <li class="nav-bttn">
+                  <li class="team nav-bttn">
                     <a href="{% url 'teamlist' %}">Team</a>
                   </li>
                 {% endblock %}
                 {% block projectlist %}
-                  <li class="nav-bttn">
+                  <li class="project nav-bttn">
                     <a href="{% url 'projectlist' %}">Projects</a>
                   </li>
                 {% endblock %}
