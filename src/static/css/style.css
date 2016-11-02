@@ -44,4 +44,131 @@ pre {
 
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background: #ecf0f1;
+}
+/** Nav **/
+.navbar-inverse {
+  background:#2c3e50 !important;
+  border-bottom:2px solid #95a5a6 !important;
+}
+
+.navbar-brand {
+  font: 12px Lato !important;
+  text-transform: uppercase;
+  color: #FFF !important;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.nav {
+  margin-bottom: 0px;
+}
+.nav a {
+  font: 500 11px Lato;
+  letter-spacing: 2px;
+  padding: 16px !important;
+  color: #95a5a6 !important;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1000;
+}
+.nav a:hover {
+  color: #FFF !important;
+}
+.nav li {
+  position: relative;
+}
+
+.navbar-inverse .navbar-toggle {
+  border: none;
+}
+
+.navbar-collapse {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+  background: transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:active {
+  background: transparent !important;
+}
+
+.icon-bar {
+  background: #95a5a6 !important;
+}
+.icon-remove{
+  font-size:2em;
+  color: #95a5a6;
+  display: none;
+}
+.navbar-collapse.in{
+  position: relative;
+  overflow-y: auto;
+  height: 100vh;
+  max-height: unset !important;
+}
+@media (max-width: 767px) {
+  .nav {
+    padding-bottom: 20px;
+  }
+  .nav a {
+    padding: 12px !important;
+  }
+  .nav-bttn{
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .nav-bttn a{
+    font-size: 1.3em
+  }
+  .navbar-nav{
+    position: absolute;
+    top: 43%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 480px) {
+  .nav {
+    padding-bottom: 20px;
+  }
+}
+@media (min-width: 768px){
+  .actv:after{
+    backface-visibility: hidden;
+    border: 1px solid #fff;
+    opacity: 1;
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 70%;
+  }
+  .nav-bttn:after {
+    backface-visibility: hidden;
+    border: 1px solid #fff;
+    opacity: 0;
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+  }
+  .nav-bttn:hover:after {
+    backface-visibility: hidden;
+    border-color: #fff;
+    opacity: 1;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+  }
 }

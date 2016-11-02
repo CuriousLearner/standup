@@ -1,13 +1,14 @@
 {% block navbar %}
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+          <span class="icon-remove glyphicon glyphicon-remove"></span>
         </button>
         <a class="navbar-brand" href="{% url 'home' %}">Standup</a>
       </div>
@@ -15,27 +16,38 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           {% if not user.is_authenticated %}
-            <ul class="nav navbar-nav">
-                {% block navregister %}
-                  <li><a href="{% url 'register' %}">Register</a></li>
+            <ul class="nav navbar-nav navbar-right">
+              {% block navregister %}
+                <li class="nav-bttn">
+                  <a href="{% url 'register' %}">Register</a>
+                </li>
                 {% endblock%}
                 {% block navlogin %}
-                  <li><a href="{% url 'login' %}">Login</a></li>
+                  <li class="nav-bttn">
+                    <a href="{% url 'login' %}">Login</a>
+                  </li>
                 {% endblock %}
-            </ul>
-          {% else %}
-            <ul class="nav navbar-nav navbar-right">
-              {% block teamlist %}
-                <li><a href="{% url 'teamlist' %}">Team</a></li>
-              {% endblock %}
-              {% block projectlist %}
-                <li><a href="{% url 'projectlist' %}">Projects</a></li>
-              {% endblock %}
-              <li><a href="{% url 'logout' %}">Logout</a></li>
-            </ul>
-          {% endif %}
-        </div><!-- /.navbar-collapse -->
-      {% endblock %}
-    </div><!-- /.container-fluid -->
-  </nav>
-{% endblock %}
+              </ul>
+            {% else %}
+              <ul class="nav navbar-nav navbar-right">
+                {% block teamlist %}
+                  <li class="nav-bttn">
+                    <a href="{% url 'teamlist' %}">Team</a>
+                  </li>
+                {% endblock %}
+                {% block projectlist %}
+                  <li class="nav-bttn">
+                    <a href="{% url 'projectlist' %}">Projects</a>
+                  </li>
+                {% endblock %}
+                <li class="nav-bttn">
+                  <a href="{% url 'logout' %}">Logout</a>
+                </li>
+              </ul>
+            {% endif %}
+            -->
+          </div>
+        {% endblock %}
+      </div>
+    </nav>
+  {% endblock %}
