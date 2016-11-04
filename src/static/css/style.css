@@ -1,3 +1,4 @@
+/**Base Styles**/
 .main {
   margin: 0 auto;
   max-width: 50em;
@@ -15,7 +16,7 @@ h2 {
 h1,
 h2,
 strong {
-  color: #333;
+  color: #2c3e50;
 }
 
 code,
@@ -175,4 +176,111 @@ body {
     transition: width 350ms ease-in-out;
     width: 70%;
   }
+}
+/**Register**/
+.form-container{
+  background: #2c3e50;
+  padding: 30px 40px 40px 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px #34495e;
+}
+.form-container h2{
+  color: #ecf0f1;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.form-group{
+  postion: relative;
+}
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 25px;
+  color: #7f8c8d;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+  font-weight: 200;
+}
+label .req {
+  margin: 2px;
+  color: #16a085;
+}
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 15px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ecf0f1;
+}
+
+input, textarea ,select {
+  font-size: 22px !important;
+  height: 100% !important;
+  padding: 5px 10px !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  border: 1px solid #95a5a6 !important;
+  color: #ecf0f1 !important;
+  border-radius: 0 !important;
+  -webkit-transition: border-color .25s ease !important;
+  transition: border-color .25s ease !important;
+}
+textarea {
+  border: 2px solid #95a5a6 !important;
+  resize: vertical !important;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #16a085 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1abc9c;
+  color: #ecf0f1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button[disabled]{
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.button[disabled]:hover {
+  background: #1abc9c;
+}
+.button:hover, .button:focus {
+  background: #16a085;
+}
+
+.button-block {
+  display: block;
+  width: 90%;
+}
+
+.errorlist{
+  margin-top: 4em;
+  list-style: none;
+  color: #c0392b;
+  font-size: 1.3em;
 }
