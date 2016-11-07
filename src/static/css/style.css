@@ -179,7 +179,7 @@ body {
 }
 /**Register**/
 .form-container{
-  background: #2c3e50;
+  background: #34495e;
   padding: 30px 40px 40px 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -190,7 +190,7 @@ body {
   color: #ecf0f1;
   padding-top: 0;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 .form-group{
   postion: relative;
@@ -213,8 +213,8 @@ label .req {
   color: #16a085;
 }
 label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
   left: 15px;
   font-size: 14px;
 }
