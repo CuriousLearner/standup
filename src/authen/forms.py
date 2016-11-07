@@ -5,10 +5,25 @@ from .models import User
 
 
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(label="Username", max_length=30,
-                               widget=forms.TextInput(attrs={'class': 'form-control', 'name': 'username'}))
-    password = forms.CharField(label="Password", max_length=30,
-                               widget=forms.PasswordInput(attrs={'class': 'form-control', 'name': 'password'}))
+    username = forms.CharField(label="Username",
+                               max_length=30,
+                               widget=forms.TextInput(
+                                   attrs={
+                                       'class': 'form-control',
+                                       'name': 'username',
+                                       'id': 'id_login_username'
+                                   }
+                               )
+    )
+    password = forms.CharField(label="Password",
+                               max_length=30,
+                               widget=forms.PasswordInput(
+                                   attrs={
+                                       'class': 'form-control',
+                                       'name': 'password'
+                                   }
+                               )
+    )
 
 
 class RegistrationForm(UserCreationForm):
