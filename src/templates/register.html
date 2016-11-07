@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
+{% load form_extras %}
 {% block navregister %}
   <li class="active"><a href="{% url 'register' %}">Register</a></li>
 {% endblock %}
 
 {% block main %}
-<h2>Register to Standup</h2>
+<div class="form-container">
+  <h2 class="text-center">Create your Standup Account</h2>
 
-<form action="{% url 'register' %}" method="POST">
-  {% csrf_token %}
-  {% for field in form %}
-    <b>{{ field.label }}</b>:
-    {{ field }}<br>
-    {{ field.errors }}<br>
-  {% endfor %}
-  <input type="submit" value="Submit" class="btn btn-success">
-</form>
-
+  <form id="registerForm" action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <div class="text-center">
+      {% for field in form %}
+      <div class="form-group">
+        <label class="control-label" for="field.id_for_label">{{ field.label }}<span class="req">*</span></label>
+        {{ field |addcss:"form-control" }}
+        <small>{{ field.errors }}</small><br>
+      </div>
+      {% endfor %}
+    </div>
+    <button id="submit" value="Submit" class="center-block button button-block">Create Account</button>
+  </form>
+</div>
 {% endblock %}

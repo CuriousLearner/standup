@@ -1,3 +1,4 @@
+/**Base Styles**/
 .main {
   margin: 0 auto;
   max-width: 50em;
@@ -15,7 +16,7 @@ h2 {
 h1,
 h2,
 strong {
-  color: #333;
+  color: #2c3e50;
 }
 
 code,
@@ -44,4 +45,242 @@ pre {
 
 body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  background: #ecf0f1;
+}
+/** Nav **/
+.navbar-inverse {
+  background:#2c3e50 !important;
+  border-bottom:2px solid #95a5a6 !important;
+}
+
+.navbar-brand {
+  font: 12px Lato !important;
+  text-transform: uppercase;
+  color: #ecf0f1 !important;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.nav {
+  margin-bottom: 0px;
+}
+.nav a {
+  font: 500 11px Lato;
+  letter-spacing: 2px;
+  padding: 16px !important;
+  color: #95a5a6 !important;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1000;
+}
+.nav a:hover {
+  color: #ecf0f1 !important;
+}
+.nav li {
+  position: relative;
+}
+
+.navbar-inverse .navbar-toggle {
+  border: none;
+}
+
+.navbar-collapse {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background: transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:focus {
+  background: transparent !important;
+}
+
+.navbar-inverse .navbar-toggle:active {
+  background: transparent !important;
+}
+
+.icon-bar {
+  background: #95a5a6 !important;
+}
+.icon-remove{
+  font-size:2em;
+  color: #95a5a6;
+  display: none;
+}
+.navbar-collapse.in{
+  position: relative;
+  overflow-y: auto;
+  height: 100vh;
+  max-height: unset !important;
+}
+.actv a{
+  color: #ecf0f1 !important;
+}
+.actv:after{
+  backface-visibility: hidden;
+  border: 1px solid #ecf0f1;
+  opacity: 1;
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 70%;
+}
+
+@media (max-width: 767px) {
+  .nav {
+    padding-bottom: 20px;
+  }
+  .nav a {
+    padding: 12px !important;
+  }
+  .nav-bttn, .actv{
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .nav-bttn a, .actv a{
+    font-size: 1.3em
+  }
+  .navbar-nav{
+    position: absolute;
+    top: 43%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 480px) {
+  .nav {
+    padding-bottom: 20px;
+  }
+}
+@media (min-width: 768px){
+  .nav-bttn:after {
+    backface-visibility: hidden;
+    border: 1px solid #ecf0f1;
+    opacity: 0;
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+  }
+  .nav-bttn:hover:after {
+    backface-visibility: hidden;
+    border-color: #ecf0f1;
+    opacity: 1;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+  }
+}
+/**Register**/
+.form-container{
+  background: #34495e;
+  padding: 30px 40px 40px 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px #34495e;
+}
+.form-container h2{
+  color: #ecf0f1;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+.form-group{
+  postion: relative;
+}
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 25px;
+  color: #7f8c8d;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+  font-weight: 200;
+}
+label .req {
+  margin: 2px;
+  color: #16a085;
+}
+label.active {
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
+  left: 15px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #ecf0f1;
+}
+
+input, textarea ,select {
+  font-size: 22px !important;
+  height: 100% !important;
+  padding: 5px 10px !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  border: 1px solid #95a5a6 !important;
+  color: #ecf0f1 !important;
+  border-radius: 0 !important;
+  -webkit-transition: border-color .25s ease !important;
+  transition: border-color .25s ease !important;
+}
+textarea {
+  border: 2px solid #95a5a6 !important;
+  resize: vertical !important;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #16a085 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1abc9c;
+  color: #ecf0f1;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button[disabled]{
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.button[disabled]:hover {
+  background: #1abc9c;
+}
+.button:hover, .button:focus {
+  background: #16a085;
+}
+
+.button-block {
+  display: block;
+  width: 90%;
+}
+
+.errorlist{
+  margin-top: 4em;
+  list-style: none;
+  color: #c0392b;
+  font-size: 1.3em;
 }
