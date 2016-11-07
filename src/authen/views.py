@@ -21,7 +21,7 @@ def auth_login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/', status=200)
         else:
             form = LoginForm(request.POST)
             context = {'form': form}
