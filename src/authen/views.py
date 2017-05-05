@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import requires_csrf_token
+from django.contrib import messages
 
 from .forms import LoginForm, RegistrationForm
 
@@ -45,7 +46,8 @@ def auth_register(request):
         else:
             context = {'form': form}
             return render(request, 'register.html', context=context)
-        return HttpResponse("Registered Successfully", status=200)
+        messages.success(request, 'Successfully registered. Please login now.')
+        return HttpResponseRedirect('/')
 
     if request.method == 'GET':
         form = RegistrationForm(None)
