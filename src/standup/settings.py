@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'authen',
     'fraternity',
     'updates',
+    'authen.templatetags'
 ]
 
 MIDDLEWARE_CLASSES = [
